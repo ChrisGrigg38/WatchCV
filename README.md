@@ -4,6 +4,8 @@ Know when your CV is opened. WatchCV lets you embed invisible tracking into your
 
 Built with **React + TypeScript + Tailwind CSS** on the frontend and **Netlify serverless functions + MongoDB** on the backend.
 
+![WatchCV](https://raw.githubusercontent.com/ChrisGrigg38/WatchCV/refs/heads/master/images/watchcv.png)
+
 ---
 
 ## How It Works
