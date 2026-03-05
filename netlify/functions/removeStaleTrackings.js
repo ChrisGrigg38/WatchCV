@@ -1,3 +1,7 @@
+exports.config = {
+  schedule: "@daily"
+};
+
 const { connectToDatabase } = require("./utils/mongodb");
 
 const headers = {
