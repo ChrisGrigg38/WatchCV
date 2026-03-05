@@ -1,0 +1,13 @@
+# Local Netlify folder
+.netlify
+
+# Environment configurations
+.env
+
+# Ignore node modules
+node_modules
+webapp/node_modules
+
+# Ignore dist
+dist
+webapp/dist
