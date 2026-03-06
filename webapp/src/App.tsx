@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { useTrackings } from "./hooks/useTrackings";
 import PdfInjector from "./components/PdfInjector/PdfInjector";
 import TrackingLink from "./components/TrackingLink/TrackingLink";
 import TrackingList from "./components/TrackingList/TrackingList";
 import TrackingDetail from "./components/TrackingDetail/TrackingDetail";
-import { useTrackings } from "./hooks/useTrackings";
+import { Disclaimer } from "./components/Disclaimer/Disclaimer";
 import Header from "./components/Header/Header";
 
-export default function App() {
+const App = () => {
   const { trackings, addTracking, removeTracking } = useTrackings();
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
@@ -18,6 +19,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-100">
       <Header />
+
       <main className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6 items-start">
 
         {/* Left column */}
@@ -31,7 +33,7 @@ export default function App() {
               trackings={trackings}
               selectedId={selectedId}
               onSelect={setSelectedId}
-              onRemove={(id) => {
+              onRemove={(id: string) => {
                 removeTracking(id);
                 if (selectedId === id) setSelectedId(null);
               }}
@@ -53,6 +55,10 @@ export default function App() {
           )}
         </div>
       </main>
+
+      <Disclaimer />
     </div>
   );
 }
+
+export default App
