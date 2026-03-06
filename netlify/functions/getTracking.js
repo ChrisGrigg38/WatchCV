@@ -47,7 +47,7 @@ exports.handler = async (event) => {
         events: events.map((e) => ({
           eventId: e.eventId,
           trackingId: e.trackingId,
-          ipAddress: e.ipAddress,
+          ipAddress: null,
           createdAt: e.createdAt,
           lastUpdatedAt: e.lastUpdatedAt,
         })),

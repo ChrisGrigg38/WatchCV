@@ -73,6 +73,19 @@ export const usePDFTrackings = () => {
         const arrayBuffer = await filePath.arrayBuffer();
         const pdfDoc = await PDFDocument.load(arrayBuffer);
 
+        //Determine if the PDF already has a form
+        const form = pdfDoc.getForm();
+
+        // Get all form fields.
+        if(form != null) {
+            const fields = form.getFields();
+            
+            //Check if there is at least one form field
+            if(fields != null && fields.length > 0) {
+                throw new Error("This PDF file already has form elements and cannot be used.");
+            }
+        }
+
         const trackingScript = `
             this.submitForm({
                 cURL: "${trackingUrl}?trackingId=${trackingId}",

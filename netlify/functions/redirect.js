@@ -47,12 +47,11 @@ exports.handler = async (event) => {
 
       if (!tooSoon) {
         const eventId = uuidv4();
-        const clientIp = getClientIp(event);
 
         await eventsCol.insertOne({
           eventId,
           trackingId,
-          ipAddress: clientIp,
+          ipAddress: null, //not storing ip address for now.
           createdAt: now,
           lastUpdatedAt: now,
         });

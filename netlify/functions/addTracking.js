@@ -11,8 +11,6 @@ const headers = {
 
 exports.handler = async (event) => {
 
-  console.log("ADD TRACKING HIT WITH: " + event.httpMethod);
-
   // Minimum required FDF structure (empty)
   const emptyFdf = "%FDF-1.2\n%âãÏÓ\n1 0 obj\n<< /FDF << >> >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF";
   //%FDF-1.2\n%âãÏÓ\n1 0 obj\n<< /FDF << >> >>\nendobj\ntrailer\n<< /Root 1 0 R >>\n%%EOF
@@ -57,13 +55,12 @@ exports.handler = async (event) => {
       };
     }
 
-    const clientIp = getClientIp(event);
     const eventId = uuidv4();
 
     await eventsCol.insertOne({
       eventId,
       trackingId,
-      ipAddress: clientIp,
+      ipAddress: null, //we don't store the ip address now due to privacy and legal concerns
       createdAt: now,
       lastUpdatedAt: now,
     });

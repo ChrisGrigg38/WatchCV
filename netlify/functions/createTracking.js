@@ -66,7 +66,7 @@ exports.handler = async (event) => {
     const trackingId = uuidv4();
     const doc = {
       trackingId,
-      ipAddress: clientIp,
+      ipAddress: null, //this is now intensionally null for privacy concerns. Please check your local laws if storing the ip address is allowed.
       ipRangeStart,
       ipRangeEnd,
       createdAt: now,
