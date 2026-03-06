@@ -12,7 +12,7 @@ Built with **React + TypeScript + Tailwind CSS** on the frontend and **Netlify s
 
 - **PDF Tracking** — Select your CV PDF and WatchCV injects a JavaScript action into it. Every time the PDF is opened in Adobe Acrobat, a tracking event is silently recorded. The PDF never leaves your browser — all injection happens client-side.
 - **Link Tracking** — Paste any URL and generate a trackable redirect link. When someone clicks it, the visit is recorded and they are immediately redirected to the destination.
-- **Dashboard** — All your tracked CVs and links are remembered via a browser cookie. Click any entry to see a line chart of opens over time and a log of recent events with IP addresses.
+- **Dashboard** — All your tracked CVs and links are remembered via a browser cookie. Click any entry to see a line chart of opens over time and a log of recent events.
 - **Auto Cleanup** — Stale trackings (no activity for a configurable number of days) are automatically purged from the database.
 
 ---
